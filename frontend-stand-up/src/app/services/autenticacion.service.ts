@@ -22,7 +22,7 @@ export class AutenticacionService {
         console.log(usuario);
         this.estaLogeado= true;
         this.usuarioLogeado= usuario;
-        this._router.navigate(['aplicacion']);
+        this._router.navigate(['sala']);
       },(error1)=>{
         console.error(error1);
       })

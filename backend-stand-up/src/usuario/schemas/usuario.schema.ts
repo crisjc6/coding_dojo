@@ -5,4 +5,5 @@ export const   UsuarioSchema =  new mongoose.Schema({
         correo: String,
         cargo: String,
         
+        
 })
