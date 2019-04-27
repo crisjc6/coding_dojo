@@ -1,12 +1,11 @@
 import { CrearUsuarioDto } from './dto/usuario.dto';
 import { UsuarioInterface } from './interfaces/usuario.interface';
-import { Injectable, Inject } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { Model } from 'mongoose';
+import { InjectModel } from '@nestjs/mongoose';
 @Injectable()
 export class UsuarioService {
-    constructor(@Inject('USUARIO_MODEL') private readonly usuarioModel: Model<UsuarioInterface>) {
-        
-    }
+    constructor(@InjectModel('Usuario') private readonly usuarioModel: Model<UsuarioInterface>) {}
     async crearUsuario(usuario:CrearUsuarioDto):Promise<UsuarioInterface>{
         const crearUsuario = new this.usuarioModel(usuario);
         return await crearUsuario.save();

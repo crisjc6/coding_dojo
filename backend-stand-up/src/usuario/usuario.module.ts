@@ -1,11 +1,16 @@
+import { UsuarioSchema } from 'usuario/schemas/usuario.schema';
 import { UsuarioService } from './usuario.service';
 import { Module } from '@nestjs/common';
 import { UsuarioController } from './usuario.controller';
-import { databaseProviders } from './base-datos.providers';
-import { UsuarioProvider } from './usuario.providers';
+import { MongooseModule } from '@nestjs/mongoose';
 
+import { MorganModule } from 'nest-morgan';
 @Module({
-  controllers: [UsuarioController],
-  providers:[UsuarioService, ...databaseProviders,...UsuarioProvider]
+  imports: [
+    MorganModule.forRoot(),
+    MongooseModule.forFeature([{ name: 'Usuario', schema: UsuarioSchema }]),
+  ],
+  providers: [UsuarioService],
+  controllers: [UsuarioController]
 })
 export class UsuarioModule {}
