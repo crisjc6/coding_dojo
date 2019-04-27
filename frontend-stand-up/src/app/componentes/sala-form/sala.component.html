@@ -1,3 +1,28 @@
-<p>
-  sala works!
-</p>
+<div class="row">
+  <div class="col-sm-4 offset-sm-4">
+    <div class="card card-body">
+
+      <form (submit)="edit ? updateSala() : submitSala()">
+
+        <div class="form-group">
+          <input type="text" name="nombre" [(ngModel)]="sala.nombre" class="form-control" placeholder="Nombre" autofocus>
+        </div>
+        <div class="form-group">
+          <input type="text" name="fechaInicio" [(ngModel)]="sala.fechaInicio" class="form-control" placeholder="fecha inicio">
+        </div>
+        <div class="form-group">
+          <input type="text" name="fechaTermina" [(ngModel)]="sala.fechaTermina" class="form-control" placeholder="fecha finaliza">
+        </div>
+        <div class="form-group">
+          <input type="text" name="miembros" [(ngModel)]="sala.miembros" class="form-control" placeholder="miembros">
+        </div>
+        <div class="form-group">
+          <input type="text" name="admin" [(ngModel)]="sala.admin" class="form-control" placeholder="admin">
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">
+          Guardar
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

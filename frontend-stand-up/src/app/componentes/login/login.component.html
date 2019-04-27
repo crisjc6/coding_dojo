@@ -1,0 +1,59 @@
+<div style="text-align:center">
+  <h1 class="animated tada">
+    LOGIN
+  </h1>
+</div>
+<div class="row">
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4">
+    <form 
+    autocomplete="off"
+          [formGroup]="formularioLogin">
+      <div align="center" >
+        <label for="correoId"
+        class="col-form-label-sm"
+        >Correo
+      </label>
+    </div>
+      <div align="center">
+        <input 
+        id="correoId"
+        type="text"
+        class="form-control"
+        formControlName="correo"
+        placeholder="Ingresar correo"></div>
+        <div
+        *ngIf="mensajesErrorCorreo">
+            <span class="help-block text-danger" *ngFor="let mensaje of mensajesErrorCorreo">
+               <p> {{mensaje}}</p>
+            </span>          
+      </div>
+        <div align="center" >
+            <label for="correoId"
+            class="col-form-label-sm"
+            >Password
+          </label>
+        </div>
+      <div align="center">
+        <input type=password
+        class="form-control"
+        formControlName="password"
+        placeholder="Ingresar password">
+        <div
+        *ngIf="mensajesErrorPassword">
+            <span class="help-block text-danger" *ngFor="let mensaje of mensajesErrorPassword">
+               <p> {{mensaje}}</p>
+            </span>           
+      </div>
+      </div>
+      <div><br></div><br>
+      <div align="center">
+        <button class="btn btn-outline-primary" 
+        (click)="logear()">
+          Ingresar
+        </button>
+      </div>
+    </form>
+  </div>
+  <div class="col-sm-4"></div>
+</div>
