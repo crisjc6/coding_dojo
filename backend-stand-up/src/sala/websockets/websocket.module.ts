@@ -3,9 +3,8 @@ import { SalaGateway } from './sala/sala.gateway';
 import { Module } from "@nestjs/common";
 
 @Module({
-    
-    imports:[SalaModule],
     providers:[SalaGateway],
+    exports:[SalaGateway]
 })
 export class WebsocketModule{
 

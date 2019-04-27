@@ -4,4 +4,5 @@ export const   UsuarioSchema =  new mongoose.Schema({
         apellido:  String,
         correo: String,
         cargo: String,
+        
 })

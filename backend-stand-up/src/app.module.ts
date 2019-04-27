@@ -11,8 +11,7 @@ import { MongooseModule } from "@nestjs/mongoose";
     useNewUrlParser: true,
     useFindAndModify: false,
     useCreateIndex: true
-  }),UsuarioModule, UsuarioSalaModule, 
-  //WebsocketModule
+  }),UsuarioModule, SalaModule
 ],
   controllers: [AppController],
   providers: [AppService],
